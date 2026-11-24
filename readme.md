@@ -11,4 +11,4 @@ Publicación en mi blog demostrando el fenómeno: <https://bastianolea.rbind.io/
 - `ascii_rayas.R`: varios modos de llenar la consola con texto algorítmico que produce patrones visuales interesantes
 
 ### Apps
-- `/app/`: aplicación Shiny que usa algunos modos de generación de ruido visual en vivo, con algunos controles para personalizar el output. Funciona ejecutando la función del script `generadores.R` en el fondo con `{callr}` que imprime los patrones en tiempo real en un archivo de texto, mientras que Shiny lee el archivo de texto cada _x_ milisegundos.
+- `/app/`: aplicación Shiny que usa algunos modos de generación de ruido visual en vivo, con algunos controles para personalizar el output. Funciona generando en R un flujo continuo de caracteres con las funciones del script `generadores.R`, que se corta cada cierta cantidad de columnas (`ancho`) igual que en una consola, por lo que cada línea queda desfasada con respecto a la anterior. Cada _x_ milisegundos (`intervalo`) Shiny envía al navegador solamente los caracteres nuevos, a un ritmo de un fragmento de texto cada `tiempo` segundos.
